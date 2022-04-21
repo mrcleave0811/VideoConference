@@ -17,7 +17,7 @@
     
     function sendUsername() {
 
-        username = document.getElementById("username-input").value
+        username = document.querySelector("h1").innerText;
         sendData({
             type: "store_user"
         })
