@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*, 
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+.custom-field {
+    position: relative;
+    font-size: 14px;
+    padding-top: 20px;
+    margin-bottom: 5px;
+}
+
+.custom-field input {
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    padding: 12px;
+    border-radius: 3px;
+    border: 2px solid #ddd;
+    width: 250px;
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.custom-field .placeholder {
+    position: absolute;
+    left: 12px;
+    top: calc(50% + 10px);
+    transform: translateY(-50%);
+    color: #aaa;
+    transition: 
+        top 0.3s ease,
+        font-size 0.3s ease,
+        color 0.3s ease;
+}
+
+.custom-field input:valid,
+.custom-field input:focus {
+    border-color: #00cec9;
+    transition-delay: 0.1s;
+}
+
+.custom-field input + .placeholder {
+    padding: 0 5px;
+    left: 8px;
+}
+
+.custom-field input:valid + .placeholder,
+.custom-field input:focus + .placeholder {
+    top: 9px;
+    font-size: 13px;
+    color: #222;
+    background: #fff;
+}
+
+/*  <!-- This will hold the video elements --> */
+#video-call-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+/*  <!-- Once the video/stream is available, this video element it automatically starts playing --> */
+#local-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 16px;
+    border-radius: 16px;
+    max-width: 20%;
+    max-height: 20%;
+    background-color: #fff;
+}
+
+/*  <!-- This will show the video of the remote user --> */
+#remote-video {
+    background: #000;
+    width: 100%;
+    height: 100%;
+}
+
+/*  Div container that holds the turn-off video and mute audio buttons */
+.call-action-div {
+    position: absolute;
+    left: 45%;
+    bottom: 32px;
+}
+
+button {
+    border: none;
+    display: inline-block;
+    padding: 0.9rem 1.9rem;
+    color: #fff !important;
+    background-color: #00cec9;
+    border-radius: 10px;
+    text-transform: capitalize;
+    transition: 0.3s;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00b894;
+    transform: scale(1) !important;
+}
